@@ -1,2 +1,3 @@
 # MyBlog
-blog engine
+## Blog engine
+Project to improve my skills in SpringBoot
