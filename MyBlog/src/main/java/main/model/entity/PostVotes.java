@@ -1,4 +1,4 @@
-package main.entity;
+package main.model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,5 +28,4 @@ public class PostVotes {
 
     @Column(name = "value", nullable = false, columnDefinition = "TINYINT")
     private int voteValue;
-
 }

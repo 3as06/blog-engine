@@ -1,4 +1,4 @@
-package main.entity;
+package main.model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,15 +10,12 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Tag2Post {
+public class Tags {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name = "post_id", nullable = false)
+    @Column(name = "name", nullable = false)
+    private String tagName;
 
-    private int post_id;
-
-    @Column(name = "tag_id", nullable = false)
-    private int tag_id;
 }

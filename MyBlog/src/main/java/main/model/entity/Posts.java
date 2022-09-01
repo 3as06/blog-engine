@@ -1,9 +1,9 @@
-package main.entity;
+package main.model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import main.entity.enums.ModerationStatus;
+import main.model.entity.enums.ModerationStatus;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -22,10 +22,10 @@ public class Posts {
     private boolean isActive;
 
     @Column(name = "moderation_status", nullable = false, columnDefinition = "ENUM('NEW', 'ACCEPTED', 'DECLINED') default 'NEW'")
-    private ModerationStatus moderationStatus;
+    private String moderationStatus;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    private User moderatorId;
+    private User moderator;
 
     @ManyToOne(cascade = CascadeType.ALL)
     private User user;
@@ -46,6 +46,5 @@ public class Posts {
     @JoinTable(name = "tag2post",
         joinColumns = {@JoinColumn(name = "tag_id")},
         inverseJoinColumns = {@JoinColumn(name = "post_id")})
-    private List<Posts> posts;
-
+    private List<Tags> tags;
 }
